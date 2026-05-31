@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Unity Spirit Partners Inc. — Strategic consulting, investment advisory, and business development. Empowering growth through strategic partnerships." />
+  <title>Unity Spirit Partners — Strategic Business Consulting</title>
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- CINEMATIC CANVAS BACKGROUND -->
+  <canvas id="gl-canvas"></canvas>
+  <!-- PARTICLE OVERLAY -->
+  <canvas id="particle-canvas"></canvas>
+  <!-- GRAIN OVERLAY -->
+  <div class="grain-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" data-scroll="0">
+        <img src="images/logo.png" alt="Unity Spirit Partners Logo" class="logo-img" />
+        <span class="logo-text">UNITY <span class="logo-accent">SPIRIT</span></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#" data-scroll="1" class="nav-link">Services</a></li>
+        <li><a href="#" data-scroll="2" class="nav-link">Portfolio</a></li>
+        <li><a href="#" data-scroll="3" class="nav-link">Process</a></li>
+        <li><a href="#" data-scroll="4" class="nav-link">About</a></li>
+        <li><a href="#" data-scroll="5" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="nav-scrim" id="nav-scrim" hidden></div>
+  <div class="nav-drawer" id="nav-drawer" hidden>
+    <button class="drawer-close" id="drawer-close" aria-label="Close">✕</button>
+    <ul class="drawer-links" id="drawer-links">
+      <li><a href="#" data-scroll="1" class="drawer-link">Services</a></li>
+      <li><a href="#" data-scroll="2" class="drawer-link">Portfolio</a></li>
+      <li><a href="#" data-scroll="3" class="drawer-link">Process</a></li>
+      <li><a href="#" data-scroll="4" class="drawer-link">About</a></li>
+      <li><a href="#" data-scroll="5" class="drawer-link">Contact</a></li>
+    </ul>
+    <div class="drawer-contacts">
+      <a href="mailto:info@unityspiritpartners.com" class="drawer-social">Email Us</a>
+      <a href="https://linkedin.com" target="_blank" class="drawer-social">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- MAIN SCROLL CONTAINER -->
+  <div id="ui-layer">
+    <div class="stage">
+
+      <!-- SECTION 0: HERO -->
+      <section class="page is-active" data-index="0" id="hero">
+        <div class="page-inner hero-inner">
+          <img src="images/logo.png" alt="Unity Spirit Partners" class="hero-logo reveal-3d">
+          <div class="hero-badge reveal-3d">Strategic Partnership Excellence</div>
+          <h1 class="hero-title reveal-3d">
+            <span class="gradient-text">Unity Spirit Partners</span>
+          </h1>
+          <p class="hero-subtitle reveal-3d">Empowering growth through strategic partnerships.<br>Building bridges between vision and success.</p>
+          <div class="hero-cta-group reveal-3d">
+            <a href="#" data-scroll="1" class="btn-primary">Explore Our Services</a>
+            <a href="#" data-scroll="5" class="btn-outline">Schedule Consultation</a>
+          </div>
+          <div class="hero-scroll-hint">
+            <div class="scroll-line"></div>
+            <span>scroll</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 1: SERVICES -->
+      <section class="page" data-index="1" id="services">
+        <div class="page-inner">
+          <div class="section-badge reveal-3d">What We Do</div>
+          <h2 class="section-title reveal-3d">Comprehensive<br><span class="gradient-text">Business Solutions</span></h2>
+          <p class="section-desc reveal-3d">From strategic planning to execution — every step guided by expertise</p>
+          <div class="services-grid reveal-3d">
+            <div class="service-card">
+              <div class="service-icon">📊</div>
+              <h3>Strategic Consulting</h3>
+              <p>Tailored strategies for sustainable growth. Market positioning, competitive analysis, and roadmap development for ambitious enterprises.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">💰</div>
+              <h3>Investment Advisory</h3>
+              <p>Expert guidance on capital allocation, portfolio strategy, and investment opportunities. Maximizing returns with calculated precision.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">🤝</div>
+              <h3>Business Development</h3>
+              <p>Identifying and nurturing strategic partnerships. Expanding market reach through meaningful connections and collaborations.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">📈</div>
+              <h3>Market Analysis</h3>
+              <p>Data-driven insights into market trends, consumer behavior, and competitive landscapes. Informed decisions, superior outcomes.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">🔄</div>
+              <h3>M&A Advisory</h3>
+              <p>End-to-end mergers and acquisitions support. Due diligence, valuation, negotiation, and seamless integration.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">🛡️</div>
+              <h3>Risk Management</h3>
+              <p>Comprehensive risk assessment and mitigation strategies. Protecting your assets while pursuing aggressive growth.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: PORTFOLIO -->
+      <section class="page" data-index="2" id="portfolio">
+        <div class="page-inner">
+          <div class="section-badge reveal-3d">Our Track Record</div>
+          <h2 class="section-title reveal-3d">Featured<br><span class="gradient-text">Partnerships</span></h2>
+          <p class="section-desc reveal-3d">Proven results across industries. Every partnership tells a story of growth.</p>
+          <div class="collections-grid reveal-3d">
+            <div class="collection-card card-large">
+              <div class="collection-overlay" style="background:linear-gradient(to top,rgba(6,4,10,0.92) 0%,rgba(6,4,10,0.4) 100%);">
+                <span class="collection-label">Cross-Border · 15+ Countries</span>
+                <h3>Global Ventures</h3>
+                <p>Cross-border partnerships spanning 15+ countries. Strategic alliances that transcend boundaries and create lasting value.</p>
+              </div>
+            </div>
+            <div class="collection-card card-medium">
+              <div class="collection-overlay" style="background:linear-gradient(to top,rgba(6,4,10,0.92) 0%,rgba(6,4,10,0.4) 100%);">
+                <span class="collection-label">Total Deal Value</span>
+                <h3>$2.5B+</h3>
+                <p>Total deal value facilitated through our advisory services</p>
+              </div>
+            </div>
+            <div class="collection-card card-medium">
+              <div class="collection-overlay" style="background:linear-gradient(to top,rgba(6,4,10,0.92) 0%,rgba(6,4,10,0.4) 100%);">
+                <span class="collection-label">Proven Success</span>
+                <h3>150+</h3>
+                <p>Successful partnerships brokered across diverse industries</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: PROCESS -->
+      <section class="page" data-index="3" id="process">
+        <div class="page-inner">
+          <div class="section-badge reveal-3d">Our Methodology</div>
+          <h2 class="section-title reveal-3d">The<br><span class="gradient-text">Partnership Journey</span></h2>
+          <p class="section-desc reveal-3d">A proven five-step approach to building lasting partnerships</p>
+          <div class="production-layout reveal-3d">
+            <div class="production-stats">
+              <div class="stat-card">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">years of expertise</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">200+</span>
+                <span class="stat-label">clients served</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">client retention</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">dedicated support</span>
+              </div>
+              <div class="production-steps">
+                <div class="prod-step"><span class="step-num">01</span><span class="step-text">Discovery & strategic alignment assessment</span></div>
+                <div class="prod-step"><span class="step-num">02</span><span class="step-text">Market research & opportunity mapping</span></div>
+                <div class="prod-step"><span class="step-num">03</span><span class="step-text">Partnership structuring & negotiation</span></div>
+                <div class="prod-step"><span class="step-num">04</span><span class="step-text">Implementation & integration support</span></div>
+                <div class="prod-step"><span class="step-num">05</span><span class="step-text">Performance monitoring & optimization</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: ABOUT -->
+      <section class="page" data-index="4" id="about">
+        <div class="page-inner">
+          <div class="section-badge reveal-3d">About Us</div>
+          <h2 class="section-title reveal-3d">Why Choose<br><span class="gradient-text">Unity Spirit Partners</span></h2>
+          <p class="section-desc reveal-3d">A legacy of excellence in strategic business advisory</p>
+          <div class="about-grid reveal-3d">
+            <div class="about-card">
+              <div class="about-icon">🌍</div>
+              <h3>Global Network</h3>
+              <p>Extensive international network spanning 15+ countries. Local expertise with global perspective for cross-border success.</p>
+            </div>
+            <div class="about-card">
+              <div class="about-icon">💎</div>
+              <h3>Proven Excellence</h3>
+              <p>Track record of delivering measurable results. Every engagement backed by data-driven strategies and industry expertise.</p>
+            </div>
+            <div class="about-card">
+              <div class="about-icon">🤝</div>
+              <h3>Client-First Approach</h3>
+              <p>Your success is our mission. Dedicated teams providing personalized attention and tailored solutions.</p>
+            </div>
+            <div class="about-card">
+              <div class="about-icon">🚀</div>
+              <h3>Innovation-Driven</h3>
+              <p>Leveraging cutting-edge analytics and market intelligence. Staying ahead of trends to give you the competitive edge.</p>
+            </div>
+          </div>
+          <div class="about-cta reveal-3d">
+            <a href="mailto:info@unityspiritpartners.com" class="btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Contact Us
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="btn-outline">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: CONTACT -->
+      <section class="page" data-index="5" id="contact">
+        <div class="page-inner">
+          <div class="section-badge reveal-3d">Get In Touch</div>
+          <h2 class="section-title reveal-3d">Start Your<br><span class="gradient-text">Partnership Journey</span></h2>
+          <p class="section-desc reveal-3d">Connect with our team — let's explore how we can grow together</p>
+          <div class="contact-layout reveal-3d" style="display:flex;justify-content:center;">
+            <div class="contact-info-card">
+              <h3>Contact Us</h3>
+              <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:info@unityspiritpartners.com">info@unityspiritpartners.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <div>
+                  <strong>Phone</strong>
+                  <a href="tel:+15557890123">+1 (555) 789-0123</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📍</span>
+                <div>
+                  <strong>Address</strong>
+                  <span>350 Fifth Avenue, New York, NY 10118</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">⏰</span>
+                <div>
+                  <strong>Business Hours</strong>
+                  <span>Mon–Fri: 9:00 AM – 6:00 PM EST</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FOOTER -->
+        <footer class="footer">
+          <div class="footer-inner">
+            <span class="footer-logo">UNITY SPIRIT PARTNERS</span>
+            <span class="footer-copy">© 2025 Unity Spirit Partners Inc. All rights reserved.</span>
+            <div class="footer-socials">
+              <a href="https://linkedin.com" target="_blank">LI</a>
+              <a href="https://twitter.com" target="_blank">TW</a>
+            </div>
+          </div>
+        </footer>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
