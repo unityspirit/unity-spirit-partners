@@ -26,7 +26,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   background: var(--bg);
 }
 body {
@@ -34,6 +34,11 @@ body {
   color: var(--fg);
   overflow-x: hidden;
   background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
 }
 
 /* GOLDEN RULE: ALL TEXT WHITE + BLACK SHADOW */

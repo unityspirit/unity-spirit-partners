@@ -5,7 +5,7 @@
 
 const TOTAL_FRAMES = 900;
 const PAGE_COUNT   = 6;
-const LERP         = 0.02;
+const LERP         = 0.08;
 const CONCURRENCY  = 48;
 const isMobile     = innerWidth < 768;
 const FRAME_DIR    = isMobile ? 'frames-mobile' : 'frames-webp';
@@ -28,9 +28,13 @@ let targetFrame  = 0;
 
 // ---- Canvas resize ----
 function resizeCanvases() {
-  canvas.width  = innerWidth;
-  canvas.height = innerHeight;
-  pCanvas.width  = innerWidth;
+  const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2);
+  canvas.width = innerWidth * dpr;
+  canvas.height = innerHeight * dpr;
+  canvas.style.width = innerWidth + 'px';
+  canvas.style.height = innerHeight + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  pCanvas.width = innerWidth;
   pCanvas.height = innerHeight;
 }
 resizeCanvases();
@@ -134,7 +138,7 @@ loadAllFrames().then(() => {
 function drawFrame(idx) {
   const img = frames[Math.max(0, Math.min(idx, TOTAL_FRAMES - 1))];
   if (!img) return;
-  const W = canvas.width, H = canvas.height;
+  const W = innerWidth, H = innerHeight;
   const r = Math.max(W / img.naturalWidth, H / img.naturalHeight);
   const iw = img.naturalWidth * r, ih = img.naturalHeight * r;
   const x = (W - iw) / 2, y = (H - ih) / 2;
@@ -162,7 +166,12 @@ window.addEventListener('scroll', () => {
   const maxScroll = document.documentElement.scrollHeight - innerHeight;
   const progress = maxScroll > 0 ? scrollY / maxScroll : 0;
   targetFrame = progress * (TOTAL_FRAMES - 1);
+  clampFrame();
 }, { passive: true });
+
+function clampFrame() {
+  targetFrame = Math.max(0, Math.min(targetFrame, TOTAL_FRAMES - 1));
+}
 
 // ============================================================
 //  PARTICLES
